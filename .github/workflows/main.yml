@@ -1,0 +1,11 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: kazuho/h2o-ci:latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Test
+      run: make -f misc/docker-ci/check.mk
